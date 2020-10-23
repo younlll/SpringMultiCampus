@@ -4,25 +4,24 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     
 <mapper namespace="BoardDAO">
-	<insert id="insertBoard" parameterType="com.multicampus.biz.board.BoardVO">
+	<insert id="insertBoard">
 		insert into board(seq, title, writer, content) 
 		values((select nvl(max(seq), 0)+1 from board), #{title}, #{writer}, #{content})
 	</insert>
 	
-	<update id="updateBoard" parameterType="com.multicampus.biz.board.BoardVO">
+	<update id="updateBoard">
 		update board set title = #{title}, content = #{content} where seq = #{seq}
 	</update>
 	
-	<delete id="deleteBoard" parameterType="com.multicampus.biz.board.BoardVO">
+	<delete id="deleteBoard">
 		delete board where seq = #{seq}
 	</delete>
 	
-	<select id="getBoard" parameterType="com.multicampus.biz.board.BoardVO"
-	                      resultType="com.multicampus.biz.board.BoardVO">
+	<select id="getBoard" resultType="board">
 		select * from board where seq = #{seq}
 	</select>
 	
-	<select id="getBoardList" resultType="com.multicampus.biz.board.BoardVO">
+	<select id="getBoardList" resultType="board">
 		select * from board order by seq desc
 	</select>
 

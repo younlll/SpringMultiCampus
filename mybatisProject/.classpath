@@ -15,5 +15,6 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/DEV/eclipse-workspace/mybatisProject/WebContent/WEB-INF/lib/mybatis-3.0.4.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
